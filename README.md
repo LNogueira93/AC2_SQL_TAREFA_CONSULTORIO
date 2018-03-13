@@ -1,1 +1,49 @@
-# AC2_SQL_TAREFA_CONSULTORIO
+/*CREATE DATABASE ESFIRRARIA
+GO*/
+
+USE ESFIRRARIA
+GO
+
+CREATE TABLE Paciente
+	(
+	ID INT not null IDENTITY(1,1)
+	,Nome VARCHAR(30)
+	,Telefone VARCHAR(14)
+	,CONSTRAINT PK_ID PRIMARY KEY(ID)
+	);
+GO
+
+CREATE TABLE Sala
+	(
+	Numero INT not null IDENTITY(1,1)
+	,CONSTRAINT PK_Numero PRIMARY KEY(Numero)
+	);
+GO
+
+CREATE TABLE Medico
+	(
+	ID INT not null IDENTITY(1,1)
+	,CRM VARCHAR(10)
+	,Telefone VARCHAR(12)
+	,Nome VARCHAR(30)
+	,Especialidade VARCHAR(30)
+	,CONSTRAINT PKID PRIMARY KEY(ID)
+	);
+GO
+
+CREATE TABLE Consulta
+	(
+	ID INT not null IDENTITY(1,1)
+	,ID_Paciente INT not null
+	,ID_Medico INT not null
+	,Numero_sala INT not null
+	,DataHora VARCHAR(16)
+	,Duracao VARCHAR(20)
+	,CONSTRAINT PK_ID_Consulta PRIMARY KEY(ID)
+	,CONSTRAINT FK_ID_Paciente FOREIGN KEY (ID_Paciente)
+	REFERENCES Paciente(ID)
+	,CONSTRAINT FK_ID_Paciente2 FOREIGN KEY (ID_Paciente)
+	REFERENCES Medico(ID)
+	,CONSTRAINT FK_ID_Medico FOREIGN KEY (ID_Medico)
+	REFERENCES Sala(Numero)
+	);
