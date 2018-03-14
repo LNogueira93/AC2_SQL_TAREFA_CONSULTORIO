@@ -47,3 +47,24 @@ CREATE TABLE Consulta
 	,CONSTRAINT FK_ID_Medico FOREIGN KEY (ID_Medico)
 	REFERENCES Sala(Numero)
 	);
+GO
+
+ALTER TABLE Consulta ADD CONSTRAINT UNI_Numero_sala UNIQUE (Numero_sala, DataHora)
+
+GO
+
+ALTER TABLE Consulta ADD CONSTRAINT CK_Duracao CHECK (Duracao LIKE '[15][30][45][60]')
+
+GO
+
+ALTER TABLE Sala ADD Tipo_Sala CARCHAR(30) not null
+
+GO
+
+ALTER TABLE Consulta ALTER COLUMN Duracao VARCHAR(20) not null
+
+GO
+
+ALTER TABLE Consulta ADD CONSTRAINT dfDuracao DEFAULT (30) FOR Duracao
+
+GO
