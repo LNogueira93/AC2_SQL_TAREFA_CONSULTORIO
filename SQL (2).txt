@@ -66,6 +66,19 @@ GO
 INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (1234,'Alvaro', '4871-5824', 'Cardiologista')
 INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (4321,'JORGE', '5248-8014', 'Pneumologista')
 
+INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade)
+VALUES (7418,'Matheus', '5248-8014', 'Enfermeiro')
+SELECT * FROM Medico
+
+INSERT INTO dbo.Medico (CRM, Nome)
+VALUES (7418,'Matheus', '5248-8014', 'Enfermeiro')
+SELECT * FROM Medico
+
+SELECT CRM
+FROM Medico
+WHERE Nome='Alvaro'
+
+
 SELECT * FROM Medico
 
 GO
@@ -75,3 +88,9 @@ WHERE Nome ='Alvaro'
 
 DELETE TOP (1)
 FROM Medico
+
+GO
+
+TRUNCATE TABLE Medico;
+
+GO /*Não gera log da remoção, diferente do delete que gera log de cada linha removida, tornando mais lenta a remoção*/
