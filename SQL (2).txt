@@ -94,3 +94,15 @@ GO
 TRUNCATE TABLE Medico;
 
 GO /*Não gera log da remoção, diferente do delete que gera log de cada linha removida, tornando mais lenta a remoção*/
+
+
+
+WHERE NOME ='MÁRIO'
+COLLATE latin1_general_CI_AI
+GO
+
+UPDATE Medico
+SET Column Nome = 'Jonas'
+WHERE CRM = '1234'
+
+go
