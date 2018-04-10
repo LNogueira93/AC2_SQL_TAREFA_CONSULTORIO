@@ -1,7 +1,7 @@
-CREATE DATABASE ESFIRRARIA
+/*CREATE DATABASE CONSULTORIO
 GO
 
-USE ESFIRRARIA
+USE CONSULTORIO
 GO
 
 CREATE TABLE Paciente ( 
@@ -62,9 +62,22 @@ ALTER TABLE Consulta ADD CONSTRAINT dfDuracao DEFAULT (30) FOR Duracao
 
 GO
 
+INSERINDO PACIENTES
+INSERT INTO dbo.Paciente (Nome, Telefone) VALUES ('Almir dos Santos', '99923232')
+INSERT INTO dbo.Paciente (Nome, Telefone) VALUES ('Adamastor Silva', '32324414')
 
-INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (1234,'Alvaro', '4871-5824', 'Cardiologista')
-INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (4321,'JORGE', '5248-8014', 'Pneumologista')
+INSERINDO MEDICOS
+INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (4321,'Creusa', '5248-8014', 'Dentista')
+INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (1234,'Juvenal', '4351-7664', 'Psic√≥logo')
+
+INSERT INTO dbo.Sala (Tipo_Sala) VALUES ('Sala 12')
+GO
+
+SELECT * FROM Sala
+GO*/
+
+INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade) VALUES (1234,'Juvenal', '4351-7664', 'Psic√≥logo')
+
 
 INSERT INTO dbo.Medico (CRM, Nome, Telefone, Especialidade)
 VALUES (7418,'Matheus', '5248-8014', 'Enfermeiro')
@@ -80,7 +93,6 @@ WHERE Nome='Alvaro'
 
 
 SELECT * FROM Medico
-
 GO
 
 DELETE FROM Medico
@@ -93,11 +105,11 @@ GO
 
 TRUNCATE TABLE Medico;
 
-GO /*N„o gera log da remoÁ„o, diferente do delete que gera log de cada linha removida, tornando mais lenta a remoÁ„o*/
+GO /*N√£o gera log da remo√ß√£o, diferente do delete que gera log de cada linha removida, tornando mais lenta a remo√ß√£o*/
 
 
 
-WHERE NOME ='M¡RIO'
+WHERE NOME ='M√ÅRIO'
 COLLATE latin1_general_CI_AI
 GO
 
